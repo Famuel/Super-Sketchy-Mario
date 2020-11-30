@@ -4,52 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Cabin"
+  />
+    <link rel="stylesheet" type="text/css" href="styles/ssm-style.css">
+    <style type="text/css">
+    h1{
+      text-align: center;
+    }
+    form{
+      text-align: center;
+    }
+    </style>
   </head>
   <body>
-    <div>
-      <a href="https://supersketchymario.deviantart.com/">
-        Check Out Super Sketchy Mario on Deviantart!</a
-      >
-    </div>
-    <a href="https://www.seriouslysketchymaterial.com"
+    <div class="nav">
+      <a class="button" href="https://www.seriouslysketchymaterial.com/comic-list">COMICS</a>
+      <a class="button" href="https://www.seriouslysketchymaterial.com/art-list">ART</a>
+      <a id="midlogo" href="https://www.seriouslysketchymaterial.com"
       ><img
-        src="images/MS Paint Logo.png"
-        alt="The Super Sketchy Mario Logo"
-        title="This logo couldn't be any more of a placeholder if it tried"
-        width="600"
-    /></a>
-    <br />
-    <button>
-      <a href="https://www.seriouslysketchymaterial.com/comic-list">COMICS</a>
-    </button>
-    <button>
-      <a href="https://www.seriouslysketchymaterial.com/art-list">ART</a>
-    </button>
-    <button>
-      <a href="https://www.seriouslysketchymaterial.com/about">ABOUT/INFO</a>
-    </button>
-    <button>
-      <a href="https://www.seriouslysketchymaterial.com/feedback">FEEDBACK</a>
-    </button>
+      src="images/MS Paint Logo Small.png"
+      alt="The Super Sketchy Mario Logo (Mini Version)"
+      title="This mini logo couldn't be any more of a placeholder if it tried"
+      width="150"
+     /></a> 
+      <a class="button" href="https://www.seriouslysketchymaterial.com/about">ABOUT</a>
+      <a class="button" href="https://www.seriouslysketchymaterial.com/feedback">FEEDBACK</a>
+    </div>
+    <div class="content-box">
     <h1>Got some Feedback? I'm all ears!</h1>
+    <br>
     <form>
       <label for="namey">Name (you can keep it anonymous if you'd like)</label>
+      <br>
       <input type="text" id="namey" name="namey" />
       <br />
+      <br>
       <label for="feedback">Feedback</label>
       <br />
       <textarea
         id="feedback"
         name="feedback"
-        rows="10"
-        cols="50"
-        placeholder="Write feedback here"
+        rows="20"
+        cols="100"
       ></textarea>
       <br />
-      <input type="submit" />
+      <input type="submit" class="smallbutton"/>
     </form>
 
     <br />
-    <a href="https://www.seriouslysketchymaterial.com/sitemap">Sitemap</a>
+    <div class="sitemap">
+      <br />
+      <a href="https://www.seriouslysketchymaterial.com/sitemap">Sitemap</a>
+      </div>
+  </div>
   </body>
 </html>
