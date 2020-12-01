@@ -84,6 +84,14 @@
     padding: 5px 10px;
     text-decoration: none;
   }
+  .smallnobutton{
+    color:rgb(0, 115, 59);
+    font-size: 20px;
+    border: 3px solid rgb(0, 115, 59);
+    background-color: rgb(73, 73, 73);
+    padding: 5px 10px;
+    text-decoration: none;
+  }
   a.button:visited{
     color:rgb(0, 115, 59);
     font-size: 35px;
@@ -121,9 +129,25 @@
     font-size:25px ;
     text-align: center;
   }
+  h5{
+    font-size:15px ;
+    text-align: center;
+  }
   label{
     font-size:20px ;
   }
   .sitemap{
       text-align: right;
+  }
+  #preview{
+    display: block;
+    float: right;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top:100px;
+    right: 150px;
+    width: 500px;
+    border: 3px solid rgb(0, 115, 59);
+    background-color:rgb(80, 177, 131);
+    padding: 0px 20px 20px;
   }

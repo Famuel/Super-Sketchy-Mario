@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A comedy-focused webcomic mainly about video games with Paper Mario as the star. There's some original stuff too.">
+    <meta name="keywords" content="comic,video,games,comedy">
+    <meta name="author" content="Steve Connors">
     <title>Feedback</title>
-    <link rel="shortcut icon" href="images/logobogo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logobigo.ico" type="image/x-icon">
     <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Cabin"
@@ -17,7 +20,39 @@
     form{
       text-align: center;
     }
+    #smallbutton{
+    color:rgb(0, 115, 59);
+    font-size: 20px;
+    border: 3px solid rgb(0, 115, 59);
+    background-color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+  #smallnobutton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 62px;
+    color:rgb(0, 115, 59);
+    font-size: 20px;
+    border: 3px solid rgb(0, 115, 59);
+    background-color: rgb(73, 73, 73);
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+  #yes{
+    display:none;
+  }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-166BWEZBC3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-166BWEZBC3');
+</script>
   </head>
   <body>
     <div class="nav">
@@ -36,12 +71,14 @@
     <div class="content-box">
     <h1>Got some Feedback? I'm all ears!</h1>
     <br>
-    <form>
-      <label for="namey">Name (you can keep it anonymous if you'd like)</label>
+    <form action="" method="get">
+      <label for="namey">Name</label>
       <br>
       <input type="text" id="namey" name="namey" />
-      <br />
+      <h5>Leave blank to submit anonymously</h5>
+      <h5 id="missing">(Currently Anonymous)</h5>
       <br>
+
       <label for="feedback">Feedback</label>
       <br />
       <textarea
@@ -51,7 +88,12 @@
         cols="100"
       ></textarea>
       <br />
-      <input type="submit" class="smallbutton"/>
+      <div id="yes">
+      <input type="submit" id="smallbutton"/>
+      </div>
+      <div id="no">
+      <a id="smallnobutton">Submit</a>
+      </div>
     </form>
 
     <br />
@@ -60,5 +102,31 @@
       <a href="https://www.seriouslysketchymaterial.com/sitemap">Sitemap</a>
       </div>
   </div>
+
+  <script>
+    function setAnonymous(){
+      let name = document.getElementById("namey").value;
+      console.log(name.length)
+      if(name.length==0){
+        document.getElementById("missing").innerText="(Currently Anonymous)"
+      }
+      else{
+        document.getElementById("missing").innerHTML="<br>"
+      }
+    }
+    function noEmpty(){
+      let feedback = document.getElementById("feedback").value;
+      if(feedback.length>0){
+        document.getElementById("no").style.display="none"
+        document.getElementById("yes").style.display="inline"
+      }
+      else{
+        document.getElementById("no").style.display="initial"
+        document.getElementById("yes").style.display="none"
+      }
+    }
+    document.getElementById("namey").oninput = setAnonymous;    
+    document.getElementById("feedback").oninput = noEmpty;
+  </script>
   </body>
 </html>
